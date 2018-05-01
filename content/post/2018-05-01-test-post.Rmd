@@ -1,0 +1,28 @@
+---
+title: test post
+author: Mark Danovich
+date: '2018-05-01'
+slug: test-post
+categories: []
+tags:
+  - temp
+---
+
+
+```{r,echo=FALSE}
+
+x<-seq(0,2*pi,0.1)
+y<-sin(2*x)+0.1*rnorm(length(x))
+plot(x,y,pch=1)
+
+func <- function(x,a,b){a*sin(b*x)}
+
+fit <- nls(y~func(x,a,b),start=list(a=1,b=2))
+lines(x,predict(fit),lty=2,col='red')
+
+
+```
+
+$$
+f(x)=\sin(2x)+0.1N(0,1)
+$$
